@@ -11,10 +11,13 @@ npm run build && cat <<EOF >> dist/test.html && npm i -D http-server && open htt
   <body>
     <script type="module">
       import { createButton } from './svelte-create-component-from-constructor-sdk.js';
-      createButton(document.body, {
-        buttonText: 'Click me!',
-        onClick: () => alert('Hello!'),
-      });
+      document.addEventListener(
+        'DOMContentLoaded',
+        createButton(document.body, {
+          buttonText: 'Click me!',
+          onClick: () => alert('Hello!'),
+        })
+      );
     </script>
   </body>
 </html>
