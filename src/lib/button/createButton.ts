@@ -30,11 +30,11 @@ type Props = {
  * @param props ButtonコンポーネントのProps
  */
 export const createButton = (target: HTMLElement, props: Props) => {
-  document.addEventListener('DOMContentLoaded', () =>
-    new Button({
-      target,
-    }).$$set({
-      ...props,
-    })
-  );
+  // 任意の処理
+
+  new Button({
+    target,
+  }).$$set({
+    ...props,
+  });
 };
